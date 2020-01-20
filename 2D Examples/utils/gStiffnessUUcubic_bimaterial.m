@@ -41,7 +41,7 @@ for indexPatch = 1:length(PHTelem)
                     end
                     
                     [Bu,~,D]=strainGrad(dgdx{elementCounter},nument,nstress,dim,kgauss,C);
-                    gphi = Fract.s*((1.0-phigp).^3 -(1.0-phigp).^2) + 3*(1.0-phigp).^2 - 2*(1.0-phigp).^3 +Fract.constk;
+                    gphi = Fract.s*((1.0-phigp).^3 -(1.0-phigp).^2) + 3*(1.0-phigp).^2 - 2*(1.0-phigp).^3;
                     
                     % Calculation of kUU
                     localkUU=localkUU + gphi.*(Bu'*D).*volume(elementCounter,kgauss);
